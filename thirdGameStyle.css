@@ -4,21 +4,6 @@ html, body {
     margin:0;
     padding:0;
 }
-label {
-    font-weight:bold;
-    margin-right:10px;
-}
-.table {
-    display:table;
-    text-align: center;
-    width:100%;
-    height:100%;
-}
-
-.cell {
-    display:table-cell;
-    vertical: align 75%;
-}
 
 .card {
     border: 4px solid black;

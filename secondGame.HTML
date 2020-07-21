@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="mainpageStyle.css">
 
-    <!--Game Title box-->
+  
     <title>Game #2</title>
    <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -23,24 +23,67 @@
       </nav>
 
     <div class="jumbotron text-center">
-  <!--Title-->
+ 
         <h1>Flappy Birds!</h1>
       </div>
 
-  <!--Canvas style-->
+  
+
+<style>
+canvas {
+  background-color: #DFCFBE; 
+  position: absolute;
+  top: 350px;
+}
+</style>
 </head> 
+<body onload= "startGame()"> 
+<script type="text/javascript">
+//onload inside of body means that when the page loads, the game will start 
 
-<body>
-  <script>
- //--Define Variables-->
- 
- //--Game piece start position-->
 
- //--Game piece movement (set the speed, gravity, ect... to 0)-->
+var gamePiece;
+var score;
+var obstacles = [];
+var gameArea; 
+function component(width, color, height, x, y, gravity){
+  //making things equal
+  this.width = width;
+  this.color = color;
+  this.height = height;
+  this.x = x;
+  this. y = y;
+  //setting everything to zero
+  this.score = 0;
+  this.speedX = 0;
+  this.speedY = 0;  
+  this.gravity = gravity;
+  }
 
- //--Canvas dimensions-->
+//Start position
+function startGame(){
+//start of game
+gameArea.start();
+  gamePiece = new component(25, "yellow", 25, 10, 120, 0.25);
+}
 
- //--All variables that determine if stuff happens (if they crash on bottom, on right, on top, on left)-->
+//Canvas dimensions
+var gameArea = {
+  canvas: 
+  document.createElement("canvas"), 
+  start: function(){
+    this.canvas.width = 1300;
+    this.canvas.height = 500;
+}
+}
+
+//Game piece movement (set the speed, gravity, ect... to 0)
+
+
+  //using canvas for animation
+
+
+ //All variables that determine if stuff happens (if they crash on bottom, on right, on top, on left)
 
  //--Obstacles-->
  function updategameArea(){var x, height, gap, minHeight, maxHeight, minGap, maxGap;
@@ -86,6 +129,7 @@ function accelerate(n){
  <!--Button that the user presses-->
  <button onmousedown="accelerate(-.1)" onmouseup=".07">Accelerate</button>
  <!--Text that shows the instructions-->
+
 
 <p> Use "Accelerate" to fly up</p>
 <p>Try not to hit the green poles</p>

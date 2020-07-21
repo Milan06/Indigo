@@ -31,29 +31,65 @@
 </head> 
 
 <body>
-
- <!--Define Variables-->
+  <script>
+ //--Define Variables-->
  
- <!--Game piece start position-->
+ //--Game piece start position-->
 
- <!--Game piece movement (set the speed, gravity, ect... to 0)-->
+ //--Game piece movement (set the speed, gravity, ect... to 0)-->
 
- <!--Canvas dimensions-->
+ //--Canvas dimensions-->
 
- <!--All variables that determine if stuff happens (if they crash on bottom, on right, on top, on left)-->
+ //--All variables that determine if stuff happens (if they crash on bottom, on right, on top, on left)-->
 
- <!--Obstacles-->
- 
- <!--Score box(use math.random)-->
+ //--Obstacles-->
+ function updategameArea(){var x, height, gap, minHeight, maxHeight, minGap, maxGap;
+ for (i=0; i < obstacles.length; i+=1){
+    if (gamePeice.crashWith(obstacles[i])){return;} 
+    }
 
- <!--When die, it says what score you got-->
-
- <!--The game has to reset-->
-
+gameArea.clear();
+gameArea.frameNo += 1;
+if (gameArea.frameNo == 1 || everyinterval(150)) {
+  x = gameArea.canvas.width;
+        minHeight = 100;
+        maxHeight = 200;
+  height = Math.floor(Math.random()*(maxHeight-minHeight+1)
+  +minHeight);
+        minGap = 30;
+        maxGap = 160;
+  gap= Math.floor(Math.random()*(maxGap-minGap+1)
+  +minGap);
+  obstacles.push(new component(30, height, "lightgreen", x, 0));
+  obstacles.push(new component(30, x - height - gap, "lightgreen", x, height + gap));
+}
+for(i=0; i < obstacles.length; i += 1){}
+  obstacles[i].x += -1;
+  obstacles[i].update();
+        
+}
+ //--Score box(use math.random)-->
+score.Text="Score: " + gameArea.frameNo;
+score.update();
+gamePeice.newPos();
+gamePeice.update();
+ //--When die, it says what score you got-->
+function everyinterval(n){
+  if((gameArea.frameNo/n)%1==0) {return true;}
+ return false;
+}
+ //--The game has to reset-->
+function accelerate(n){
+  gamePeice.gravity=n
+}
+</script>
  <!--Button that the user presses-->
-
+ <button onmousedown="accelerate(-.1)" onmouseup=".07">Accelerate</button>
  <!--Text that shows the instructions-->
 
+<p> Use "Accelerate" to fly up</p>
+<p>Try not to hit the green poles</p>
+<p>GOOD LUCK!</p>
 
 </body>
 </html>

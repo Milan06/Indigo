@@ -1,0 +1,14 @@
+.row {
+    float: left;
+}
+/* Set black background color, white text and some padding */
+footer {
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    font-size: larger;
+  }
+  img {
+      width: 300px; 
+      length: 300px;
+  }

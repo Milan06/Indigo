@@ -35,6 +35,7 @@ canvas {
   position: absolute;
   top: 350px;
 }
+
 </style>
 </head> 
 <body onload= "startGame()"> 
@@ -62,7 +63,6 @@ function component(width, color, height, x, y, gravity){
 
 //Start position
 function startGame(){
-//start of game
 gameArea.start();
   gamePiece = new component(25, "yellow", 25, 10, 120, 0.25);
 }
@@ -80,7 +80,7 @@ var gameArea = {
 //Game piece movement (set the speed, gravity, ect... to 0)
 
 
-  //using canvas for animation
+//using canvas for animation
 
 
  //All variables that determine if stuff happens (if they crash on bottom, on right, on top, on left)
@@ -121,6 +121,9 @@ function everyinterval(n){
   if((gameArea.frameNo/n)%1==0) {return true;}
  return false;
 }
+
+//accelerate button
+
  //--The game has to reset-->
 function accelerate(n){
   gamePeice.gravity=n
@@ -128,9 +131,9 @@ function accelerate(n){
 </script>
  <!--Button that the user presses-->
  <button onmousedown="accelerate(-.1)" onmouseup=".07">Accelerate</button>
+
+
  <!--Text that shows the instructions-->
-
-
 <p> Use "Accelerate" to fly up</p>
 <p>Try not to hit the green poles</p>
 <p>GOOD LUCK!</p>

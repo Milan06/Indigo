@@ -1,38 +1,4 @@
 
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="secondGameStyle.css">
-    
-
-  
-    <title>Game #2</title>
-   <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">WebSiteName</a>
-          </div>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#"><a href="mainpage.HTML">Home</a></a></li>
-            <li><a href="#">List of Games</a></li>
-          </ul>
-        </div>
-      </nav>
-
-    <div class="jumbotron text-center">
- 
-        <h1>Flappy Birds!</h1>
-      </div>
-
-        </head>
-        <body onload="startGame()">
-        <script>
-        
         var gamePiece;
         var obstacles = [];
         var myScore;
@@ -149,11 +115,3 @@
         function accelerate(n) {
             gamePiece.gravity = n;
         }
-        </script>
-        <br>
-        <button onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.07)">ACCELERATE</button>
-        <p>Use the "Accelerate" button to fly up and let go to drop</p>
-        <p>Try not to git the green poles</p>
-        <p>GOOD LUCK!</p>
-        </body>
-        </html>

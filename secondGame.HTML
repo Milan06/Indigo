@@ -24,7 +24,7 @@
     </nav>
 
     <div class="jumbotron text-center">
-        <h1>Flappy Bird</h1>
+        <h1>FLOAT</h1>
     </div>
 
 </head>
@@ -35,6 +35,11 @@
     <div class="container-fluid">
         <div class="row" >
             <div class="card text-center">
+                <button onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.07)"
+>FLOAT</button>
+
+<button onmouseup="restart()"
+>TRY AGAIN</button>
                 <div class="card-body game-div">
 
               
@@ -58,7 +63,7 @@
                 <div class="card-body">
                  <div class="instructions">
                  <p><strong>Instructions:</strong><br><br> </p>
-                 <p>Use the "FLY" button to float up and let go to drop</p>
+                 <p>Use the "FLOAT" button to float up and let go to drop</p>
                  <p>Try not to hit the purple poles</p>
                  <p>GOOD LUCK!</p>
    
@@ -77,6 +82,9 @@
         }
         div{
             background-color: rgb(250, 208, 215)
+        }
+        h1{
+            font-family: 'Lucida Sans';
         }
         </style>
         
@@ -237,11 +245,7 @@
       </script>
 
       
-<button onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.07)"
->FLY</button>
 
-<button onmouseup="restart()"
->Restart</button>
 
       
      

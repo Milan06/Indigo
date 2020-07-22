@@ -130,27 +130,27 @@ function drawGame() {
         dy = -dy;
     }
     if(paddleYO > canvas.height - 75) {
-        downPressed = false
-    }
-    else if(paddleYO < 0) {
-        upPressed = false
-    }
-    if(paddleYT > canvas.height - 75) {
-        sPressed = false
-    }
-    else if(paddleYT < 0) {
         wPressed = false
     }
-    if(upPressed) {
-        paddleYO -= 7;
+    else if(paddleYO < 0) {
+        sPressed = false
     }
-    else if(downPressed) {
-        paddleYO += 7;
+    if(paddleYT > canvas.height - 75) {
+        downPressed = false
+    }
+    else if(paddleYT < 0) {
+        upPressed = false
     }
     if(wPressed) {
-        paddleYT -=7;
+        paddleYO -= 7;
     }
     else if(sPressed) {
+        paddleYO += 7;
+    }
+    if(upPressed) {
+        paddleYT -=7;
+    }
+    else if(downPressed) {
         paddleYT +=7;
     }
     x += dx;

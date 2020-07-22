@@ -31,31 +31,36 @@
   
 
       <style>
+    
         canvas {
             border:1px solid rgb(255, 187, 0);
             background-color: rgb(26, 175, 224);
+            position: absolute;
+            top:450px;
         }
         </style>
         </head>
+
+
         <body onload="startGame()">
         <script>
-        
+      //Variables
         var gamePiece;
         var obstacles = [];
         var myScore;
-        
+      //game start
         function startGame() {
-            gamePiece = new component(15, 15, "yellow", 10, 120);
+            gamePiece = new component(20, 20, "yellow", 10, 120);
             gamePiece.gravity = 0.05;
-            myScore = new component("30px", "Consolas", "black", 280, 40, "text");
+            myScore = new component("30px", "black", 280, 40, "text");
             gameArea.start();
         }
-        
+        //canvas area
         var gameArea = {
             canvas : document.createElement("canvas"),
             start : function() {
-                this.canvas.width = 700;
-                this.canvas.height = 500;
+                this.canvas.width = 1300;
+                this.canvas.height = 550;
                 this.context = this.canvas.getContext("2d");
                 document.body.insertBefore(this.canvas, document.body.childNodes[0]);
                 this.frameNo = 0;
@@ -65,7 +70,7 @@
                 this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
             }
         }
-        
+        //components
         function component(width, height, color, x, y, type) {
             this.type = type;
             this.score = 0;
@@ -77,6 +82,7 @@
             this.y = y;
             this.gravity = 0;
             this.gravitySpeed = 0;
+            //canvas animation 
             this.update = function() {
                 ctx = gameArea.context;
                 if (this.type == "text") {
@@ -88,12 +94,14 @@
                     ctx.fillRect(this.x, this.y, this.width, this.height);
                 }
             }
+            //box speed and gravity
             this.newPos = function() {
                 this.gravitySpeed += this.gravity;
                 this.x += this.speedX;
                 this.y += this.speedY + this.gravitySpeed;
                 this.hitBottom();
             }
+            //if statements (when to detect end of game)
             this.hitBottom = function() {
                 var rockbottom = gameArea.canvas.height - this.height;
                 if (this.y > rockbottom) {
@@ -117,7 +125,7 @@
                 return crash;
             }
         }
-        
+        //updates game area when crash
         function updateGameArea() {
             var x, height, gap, minHeight, maxHeight, minGap, maxGap;
             for (i = 0; i < obstacles.length; i += 1) {
@@ -125,6 +133,7 @@
                     return;
                 } 
             }
+            //clears canvas every 150 milliseconds 
             gameArea.clear();
             gameArea.frameNo += 1;
             if (gameArea.frameNo == 1 || everyinterval(150)) {
@@ -142,6 +151,7 @@
                 obstacles[i].x += -1;
                 obstacles[i].update();
             }
+            //score 
             myScore.text="SCORE: " + gameArea.frameNo;
             myScore.update();
             gamePiece.newPos();
@@ -152,11 +162,13 @@
             if ((gameArea.frameNo / n) % 1 == 0) {return true;}
             return false;
         }
-        
+        //accelerate and buttons
         function accelerate(n) {
             gamePiece.gravity = n;
         }
         </script>
+
+
         <br>
         <button onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.07)">ACCELERATE</button>
         <p>Use the "Accelerate" button to fly up and let go to drop</p>

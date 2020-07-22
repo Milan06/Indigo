@@ -44,7 +44,7 @@
         var gamePiece;
         var obstacles = [];
         var myScore;
-
+        var restart;
         
         function startGame() {
             gamePiece = new component(30, 30, "https://images.techhive.com/images/article/2014/08/icon-100409049-large.jpg", 10, 120,"image" );
@@ -177,10 +177,10 @@
         function accelerate(n) {
             gamePiece.gravity = n;
         }
-     
+    
 
       </script>
-      
+
         <br>
         <button onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.07)"
         >FLY</button>

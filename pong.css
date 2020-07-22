@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'pongFont';
+    src: url('pongFont.ttf');
+}
+canvas { border: 1px solid black; background-color: black;}
+canvas {
+    position: absolute;
+    left: 575px;
+} 
+
+

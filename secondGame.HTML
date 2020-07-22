@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+        <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -128,10 +129,10 @@
             gameArea.frameNo += 1;
             if (gameArea.frameNo == 1 || everyinterval(150)) {
                 x = gameArea.canvas.width;
-                minHeight = 20;
-                maxHeight = 200;
+                minHeight = 10;
+                maxHeight = 300;
                 height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
-                minGap = 100;
+                minGap = 40;
                 maxGap = 200;
                 gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
                 obstacles.push(new component(30, height, "lightgreen", x, 0));

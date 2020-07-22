@@ -129,6 +129,18 @@ function drawGame() {
     if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
         dy = -dy;
     }
+    if(paddleYO > canvas.height - 75) {
+        downPressed = false
+    }
+    else if(paddleYO < 0) {
+        upPressed = false
+    }
+    if(paddleYT > canvas.height - 75) {
+        sPressed = false
+    }
+    else if(paddleYT < 0) {
+        wPressed = false
+    }
     if(upPressed) {
         paddleYO -= 7;
     }

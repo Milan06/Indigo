@@ -35,14 +35,13 @@
     <div class="container-fluid">
         <div class="row" >
             <div class="card text-center">
-                <button onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.07)"
-                >FLY</button>
-         
-    
+                <div class="card-body game-div">
+
+              
   
              
                 
-                <div class="card-body" >
+        
                     
             
 
@@ -51,7 +50,7 @@
 
                 </div>
 
-            </div>
+           
         </div>
         <div class="row top7"></div>
         <div class="row">
@@ -85,26 +84,30 @@
         var gamePiece;
         var obstacles = [];
         var myScore;
-        var restart;
+        var gameArea;
         
         function startGame() {
-            console.log("were in the startgame function")
+            console.log("were in the startgame function");
+            obstacles = [];
+            myScore = 0;
+            $(".game-div").empty();
+            gameArea= {};
+            createGameArea();
             gamePiece = new component(30, 30, "https://images.techhive.com/images/article/2014/08/icon-100409049-large.jpg", 10, 120,"image" );
             gamePiece.gravity = 0.05;
             myScore = new component("40px", "Consolas", "black", 280, 40, "text");
             gameArea.start();
         }
         
-        var gameArea = {
+        function createGameArea(){
+          gameArea = {
             canvas : document.createElement("canvas"),
             start : function() {
                 this.canvas.width = 700;
                 this.canvas.height = 500;
 
                 this.context = this.canvas.getContext("2d");
-
-                //document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-                document.querySelector(".card-body").appendChild(this.canvas)
+                document.querySelector(".game-div").appendChild(this.canvas)
 
 
                 this.frameNo = 0;
@@ -114,6 +117,9 @@
                 this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
             }
         }
+        }
+        
+        
         
         function component(width, height, color, x, y, type) {
             this.type = type;
@@ -224,10 +230,20 @@
         function accelerate(n) {
             gamePiece.gravity = n;
         }
-    
-
+      function restart(){
+        location.reload();
+        }
+        
       </script>
 
+      
+<button onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.07)"
+>FLY</button>
+
+<button onmouseup="restart()"
+>Restart</button>
+
+      
      
        
      

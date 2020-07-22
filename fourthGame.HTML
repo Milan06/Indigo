@@ -36,9 +36,68 @@
         <div class="row">
             <div class="card text-center">
                 <div class="card-body">
+
                     <h5 class="card-title">This is where the game will go</h5>
-                    <script>document.getElementById("logic.js");</script>
-                    
+                    <div class="row">
+                        <div class="col-lg-12">
+                            ​
+                            <!-- First card: Holds the Word to Guess (blanks and guessed word) -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title"><strong>Word to Guess</strong></h3>
+                                </div>
+                                <div class="card-body">
+                                    <!-- This h3 section called wordblanks is what we'll be replacing with letters as the user guesses.
+                                          Pay particular attention to the id called ***wordblanks***. We'll be referencing this in the JavaScript. -->
+                                    <h3 id="word-blanks">_ _ _ _ _ _ _ _ _ </h3>
+                                </div>
+                            </div>
+                            ​
+                            <!-- Second card: Holds the list of Wrong User Guesses. -->
+                            <div class="card">
+                                <div class="card-body">
+                                    ​
+                                    <!-- This span section called userGuesses is where we will be dumping the wrong guesses.
+                                          Pay particular attention to the id called ****userGuesses***. We'll be referencing this in the JavaScript. -->
+                                    <strong>Wrong Guesses: </strong> <span id="wrong-guesses"></span>
+                                </div>
+                            </div>
+                            ​
+                            <!-- Third card: Holds the Number of Wrong Guesses -->
+                            <div class="card">
+                                <div class="card-body">
+                                    ​
+                                    <!-- This span called guessesLeft is where we will be dumping the number of guesses left.
+                                          Pay attention to the id called ****guessesLeft****. We'll be referencing this in the JavaScript. -->
+                                    <strong>Guesses Left: </strong> <span id="guesses-left">9</span>
+                                </div>
+                            </div>
+                            ​
+                            <!-- Fourth card: Holds the number of Wins. -->
+                            <div class="card">
+                                <div class="card-body">
+                                    ​
+                                    <!-- This span called winCounter is where we'll be dumping the number of wins.
+                                          Pay attention to the id called ****winCounter***. We'll be referencing this in the JavaScript. -->
+                                    <strong>Wins: </strong> <span id="win-counter">0</span>
+                                </div>
+                            </div>
+                            ​
+                            <!-- Fifth card: Holds the number of Losses. -->
+                            <div class="card">
+                                <div class="card-body">
+                                    ​
+                                    <!-- This span called winCounter is where we'll be dumping the number of wins.
+                                          Pay attention to the id called ****winCounter***. We'll be referencing this in the JavaScript. -->
+                                    <strong>Losses: </strong> <span id="loss-counter">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>document.getElementById("logic.js");
+                    </script>
+
                 </div>
 
             </div>
@@ -47,19 +106,19 @@
         <div class="row">
             <div class="card text-center">
                 <div class="card-body">
-                 <div class="instructions">
-                 <p><strong>Instructions:</strong><br><br>The Instructions for the website go here</p>   
-   
-                 </div>
+                    <div class="instructions">
+                        <p><strong>Instructions:</strong><br><br>The Instructions for the website go here</p>
+
+                    </div>
                 </div>
 
             </div>
         </div>
     </div>
-  
 
 
 
+    <script src="logic.js"></script>
 
 </body>
 

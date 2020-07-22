@@ -29,14 +29,19 @@
 
 </head>
 
-<body>
+<body onload="startGame()">
 
 
     <div class="container-fluid">
         <div class="row">
             <div class="card text-center">
-                <div class="card-body">
+                <div class="card-body" >
+
+
                     <h5 class="card-title">This is where the game will go</h5>
+                    
+
+
                 </div>
 
             </div>
@@ -54,15 +59,7 @@
             </div>
         </div>
     </div>
-  
 
-
-
-
-
-
-  
-  
 
       <style>
         canvas {
@@ -71,17 +68,15 @@
         }
         
         </style>
-        </head>
-        <body onload="startGame()">
-        <script>
-          
         
+        <script>  
         var gamePiece;
         var obstacles = [];
         var myScore;
 
         
         function startGame() {
+            console.log("were in the startgame function")
             gamePiece = new component(30, 30, "https://images.techhive.com/images/article/2014/08/icon-100409049-large.jpg", 10, 120,"image" );
             gamePiece.gravity = 0.05;
             myScore = new component("40px", "Consolas", "black", 280, 40, "text");
@@ -93,8 +88,13 @@
             start : function() {
                 this.canvas.width = 700;
                 this.canvas.height = 500;
+
                 this.context = this.canvas.getContext("2d");
-                document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+
+                //document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+                document.querySelector(".card-body").appendChild(this.canvas)
+
+
                 this.frameNo = 0;
                 this.interval = setInterval(updateGameArea, 20);
                 },

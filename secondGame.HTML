@@ -75,7 +75,7 @@
         var gamePiece;
         var obstacles = [];
         var myScore;
-
+        var restart;
         
         function startGame() {
             console.log("were in the startgame function")
@@ -214,10 +214,10 @@
         function accelerate(n) {
             gamePiece.gravity = n;
         }
-     
+    
 
       </script>
-      
+
         <br>
         <button onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.07)"
         >FLY</button>

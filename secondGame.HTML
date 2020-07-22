@@ -1,159 +1,166 @@
 
         <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="secondGameStyle.css">
-    
-
-  
-    <title>Game #2</title>
-   <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">WebSiteName</a>
-          </div>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#"><a href="mainpage.HTML">Home</a></a></li>
-            <li><a href="#">List of Games</a></li>
-          </ul>
-        </div>
-      </nav>
-
-    <div class="jumbotron text-center">
- 
-        <h1>Flappy Birds!</h1>
-      </div>
-
-        </head>
-        <body onload="startGame()">
-        <script>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <link rel="stylesheet" href="mainpageStyle.css">
         
-        var gamePiece;
-        var obstacles = [];
-        var myScore;
+          
+            <title>Game #2</title>
+           <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#">WebSiteName</a>
+                  </div>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#"><a href="mainpage.HTML">Home</a></a></li>
+                    <li><a href="#">List of Games</a></li>
+                  </ul>
+                </div>
+              </nav>
         
-        function startGame() {
-            gamePiece = new component(15, 15, "yellow", 10, 120);
-            gamePiece.gravity = 0.05;
-            myScore = new component("30px", "Consolas", "black", 280, 40, "text");
-            gameArea.start();
-        }
+            <div class="jumbotron text-center">
+         
+                <h1>Flappy Birds!</h1>
+              </div>
         
-        var gameArea = {
-            canvas : document.createElement("canvas"),
-            start : function() {
-                this.canvas.width = 700;
-                this.canvas.height = 500;
-                this.context = this.canvas.getContext("2d");
-                document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-                this.frameNo = 0;
-                this.interval = setInterval(updateGameArea, 20);
-                },
-            clear : function() {
-                this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-            }
-        }
+          
         
-        function component(width, height, color, x, y, type) {
-            this.type = type;
-            this.score = 0;
-            this.width = width;
-            this.height = height;
-            this.speedX = 0;
-            this.speedY = 0;    
-            this.x = x;
-            this.y = y;
-            this.gravity = 0;
-            this.gravitySpeed = 0;
-            this.update = function() {
-                ctx = gameArea.context;
-                if (this.type == "text") {
-                    ctx.font = this.width + " " + this.height;
-                    ctx.fillStyle = color;
-                    ctx.fillText(this.text, this.x, this.y);
-                } else {
-                    ctx.fillStyle = color;
-                    ctx.fillRect(this.x, this.y, this.width, this.height);
+              <style>
+                canvas {
+                    border:1px solid rgb(255, 187, 0);
+                    background-color: rgb(26, 175, 224);
                 }
-            }
-            this.newPos = function() {
-                this.gravitySpeed += this.gravity;
-                this.x += this.speedX;
-                this.y += this.speedY + this.gravitySpeed;
-                this.hitBottom();
-            }
-            this.hitBottom = function() {
-                var rockbottom = gameArea.canvas.height - this.height;
-                if (this.y > rockbottom) {
-                    this.y = rockbottom;
+                </style>
+                </head>
+                <body onload="startGame()">
+                <script>
+                
+                var gamePiece;
+                var obstacles = [];
+                var myScore;
+                
+                function startGame() {
+                    gamePiece = new component(15, 15, "yellow", 10, 120);
+                    gamePiece.gravity = 0.05;
+                    myScore = new component("30px", "Consolas", "black", 280, 40, "text");
+                    gameArea.start();
+                }
+                
+                var gameArea = {
+                    canvas : document.createElement("canvas"),
+                    start : function() {
+                        this.canvas.width = 700;
+                        this.canvas.height = 500;
+                        this.context = this.canvas.getContext("2d");
+                        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+                        this.frameNo = 0;
+                        this.interval = setInterval(updateGameArea, 20);
+                        },
+                    clear : function() {
+                        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                    }
+                }
+                
+                function component(width, height, color, x, y, type) {
+                    this.type = type;
+                    this.score = 0;
+                    this.width = width;
+                    this.height = height;
+                    this.speedX = 0;
+                    this.speedY = 0;    
+                    this.x = x;
+                    this.y = y;
+                    this.gravity = 0;
                     this.gravitySpeed = 0;
+                    this.update = function() {
+                        ctx = gameArea.context;
+                        if (this.type == "text") {
+                            ctx.font = this.width + " " + this.height;
+                            ctx.fillStyle = color;
+                            ctx.fillText(this.text, this.x, this.y);
+                        } else {
+                            ctx.fillStyle = color;
+                            ctx.fillRect(this.x, this.y, this.width, this.height);
+                        }
+                    }
+                    this.newPos = function() {
+                        this.gravitySpeed += this.gravity;
+                        this.x += this.speedX;
+                        this.y += this.speedY + this.gravitySpeed;
+                        this.hitBottom();
+                    }
+                    this.hitBottom = function() {
+                        var rockbottom = gameArea.canvas.height - this.height;
+                        if (this.y > rockbottom) {
+                            this.y = rockbottom;
+                            this.gravitySpeed = 0;
+                        }
+                    }
+                    this.crashWith = function(otherobj) {
+                        var left = this.x;
+                        var right = this.x + (this.width);
+                        var top = this.y;
+                        var bottom = this.y + (this.height);
+                        var otherleft = otherobj.x;
+                        var otherright = otherobj.x + (otherobj.width);
+                        var othertop = otherobj.y;
+                        var otherbottom = otherobj.y + (otherobj.height);
+                        var crash = true;
+                        if ((bottom < othertop) || (top > otherbottom) || (right < otherleft) || (left > otherright)) {
+                            crash = false;
+                        }
+                        return crash;
+                    }
                 }
-            }
-            this.crashWith = function(otherobj) {
-                var left = this.x;
-                var right = this.x + (this.width);
-                var top = this.y;
-                var bottom = this.y + (this.height);
-                var otherleft = otherobj.x;
-                var otherright = otherobj.x + (otherobj.width);
-                var othertop = otherobj.y;
-                var otherbottom = otherobj.y + (otherobj.height);
-                var crash = true;
-                if ((bottom < othertop) || (top > otherbottom) || (right < otherleft) || (left > otherright)) {
-                    crash = false;
+                
+                function updateGameArea() {
+                    var x, height, gap, minHeight, maxHeight, minGap, maxGap;
+                    for (i = 0; i < obstacles.length; i += 1) {
+                        if (gamePiece.crashWith(obstacles[i])) {
+                            return;
+                        } 
+                    }
+                    gameArea.clear();
+                    gameArea.frameNo += 1;
+                    if (gameArea.frameNo == 1 || everyinterval(150)) {
+                        x = gameArea.canvas.width;
+                        minHeight = 10;
+                        maxHeight = 300;
+                        height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
+                        minGap = 40;
+                        maxGap = 200;
+                        gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
+                        obstacles.push(new component(30, height, "lightgreen", x, 0));
+                        obstacles.push(new component(30, x - height - gap, "lightgreen", x, height + gap));
+                    }
+                    for (i = 0; i < obstacles.length; i += 1) {
+                        obstacles[i].x += -1;
+                        obstacles[i].update();
+                    }
+                    myScore.text="SCORE: " + gameArea.frameNo;
+                    myScore.update();
+                    gamePiece.newPos();
+                    gamePiece.update();
                 }
-                return crash;
-            }
-        }
-        
-        function updateGameArea() {
-            var x, height, gap, minHeight, maxHeight, minGap, maxGap;
-            for (i = 0; i < obstacles.length; i += 1) {
-                if (gamePiece.crashWith(obstacles[i])) {
-                    return;
-                } 
-            }
-            gameArea.clear();
-            gameArea.frameNo += 1;
-            if (gameArea.frameNo == 1 || everyinterval(150)) {
-                x = gameArea.canvas.width;
-                minHeight = 10;
-                maxHeight = 300;
-                height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
-                minGap = 40;
-                maxGap = 200;
-                gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-                obstacles.push(new component(30, height, "lightgreen", x, 0));
-                obstacles.push(new component(30, x - height - gap, "lightgreen", x, height + gap));
-            }
-            for (i = 0; i < obstacles.length; i += 1) {
-                obstacles[i].x += -1;
-                obstacles[i].update();
-            }
-            myScore.text="SCORE: " + gameArea.frameNo;
-            myScore.update();
-            gamePiece.newPos();
-            gamePiece.update();
-        }
-        
-        function everyinterval(n) {
-            if ((gameArea.frameNo / n) % 1 == 0) {return true;}
-            return false;
-        }
-        
-        function accelerate(n) {
-            gamePiece.gravity = n;
-        }
-        </script>
-        <br>
-        <button onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.07)">ACCELERATE</button>
-        <p>Use the "Accelerate" button to fly up and let go to drop</p>
-        <p>Try not to git the green poles</p>
-        <p>GOOD LUCK!</p>
-        </body>
-        </html>
+                
+                function everyinterval(n) {
+                    if ((gameArea.frameNo / n) % 1 == 0) {return true;}
+                    return false;
+                }
+                
+                function accelerate(n) {
+                    gamePiece.gravity = n;
+                }
+                </script>
+                <br>
+                <button onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.07)">ACCELERATE</button>
+                <p>Use the "Accelerate" button to fly up and let go to drop</p>
+                <p>Try not to git the green poles</p>
+                <p>GOOD LUCK!</p>
+                </body>
+                </html>

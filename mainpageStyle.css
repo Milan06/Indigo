@@ -3,7 +3,7 @@
 }
 /* Set black background color, white text and some padding */
 footer {
-    background-color: grey;
+    background-color: black;
     color: white;
     padding: 10px;
     font-size: larger;

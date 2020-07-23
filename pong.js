@@ -102,8 +102,8 @@ function drawGame() {
             dx = -dx;
         }
         else {
-            if (ptScore < 6) {
-                ptScore++;
+            if (poScore < 6) {
+                poScore++;
                 ballReset();
             } 
             else {
@@ -117,8 +117,8 @@ function drawGame() {
             dx = -dx;
         }
         else {
-            if (poScore < 6) {
-                poScore++;
+            if (ptScore < 6) {
+                ptScore++;
                 ballReset();
             } 
             else {

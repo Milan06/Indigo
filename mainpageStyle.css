@@ -13,21 +13,24 @@ footer {
       height: 300px;
   }
 
-  #preview-game{
-      position: relative;
-      top: 15px;
+  #preview-game-1{
+position: relative;
+bottom: 11px;
   }
-
+  
 #preview-game-2{
     position: relative;
-    top: 30px;
+    top: 10px;
 }
 
-
+#preview-game-3{
+    position: relative;
+    top: 22px;
+}
 
 #preview-game-4{
     position: relative;
-    top: 15px;
+    top: 34px;
 }
 
 .top7 { 

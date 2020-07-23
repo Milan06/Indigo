@@ -9,22 +9,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="thirdGameStyle.css">
 
-    <title>Game #3</title>
+    <title>FLOAT</title>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">WebSiteName</a>
+                <a class="navbar-brand" href="#">HackIt Gaming</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="#"><a href="mainpage.HTML">Home</a></a></li>
-                <li><a href="#">List of Games</a></li>
                 <li class="active"><a href="#"><a href="aboutPage.HTML">About Page</a></a></li>
             </ul>
         </div>
     </nav>
 
     <div class="jumbotron text-center">
-        <h1>Flappy Bird</h1>
+        <h1>FLOAT</h1>
+
+   
     </div>
 
 </head>
@@ -36,13 +37,17 @@
         <div class="row" >
             <div class="card text-center">
                 <button onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.07)"
-                >FLY</button>
-         
-    
+>FLOAT</button>
+
+<button onmouseup="restart()"
+>TRY AGAIN</button>
+                <div class="card-body game-div">
+
+              
   
              
                 
-                <div class="card-body" >
+        
                     
             
 
@@ -51,15 +56,15 @@
 
                 </div>
 
-            </div>
+           
         </div>
         <div class="row top7"></div>
         <div class="row">
             <div class="card text-center">
                 <div class="card-body">
                  <div class="instructions">
-                 <p><strong>Instructions:</strong><br><br> </p>
-                 <p>Use the "FLY" button to float up and let go to drop</p>
+                 <p><strong>HOW TO PLAY:</strong><br><br> </p>
+                 <p>Use the "FLOAT" button to float up and let go to drop</p>
                  <p>Try not to hit the purple poles</p>
                  <p>GOOD LUCK!</p>
    
@@ -76,33 +81,42 @@
             border:4px solid black;
             background-image:url('https://cdn.lowgif.com/full/817c1ad017817a59-indiegamerrid-u-indiegamerrid-reddit.gif');
         }
-        
+        div{
+            background-color: white;
+        }
+        h1{
+            font-family: 'Lucida Sans';
+        }
         </style>
         
         <script>  
         var gamePiece;
         var obstacles = [];
         var myScore;
-        var restart;
+        var gameArea;
         
         function startGame() {
-            console.log("were in the startgame function")
+            console.log("were in the startgame function");
+            obstacles = [];
+            myScore = 0;
+            $(".game-div").empty();
+            gameArea= {};
+            createGameArea();
             gamePiece = new component(30, 30, "https://images.techhive.com/images/article/2014/08/icon-100409049-large.jpg", 10, 120,"image" );
             gamePiece.gravity = 0.05;
             myScore = new component("40px", "Consolas", "black", 280, 40, "text");
             gameArea.start();
         }
         
-        var gameArea = {
+        function createGameArea(){
+          gameArea = {
             canvas : document.createElement("canvas"),
             start : function() {
                 this.canvas.width = 700;
                 this.canvas.height = 500;
 
                 this.context = this.canvas.getContext("2d");
-
-                //document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-                document.querySelector(".card-body").appendChild(this.canvas)
+                document.querySelector(".game-div").appendChild(this.canvas)
 
 
                 this.frameNo = 0;
@@ -112,6 +126,9 @@
                 this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
             }
         }
+        }
+        
+        
         
         function component(width, height, color, x, y, type) {
             this.type = type;
@@ -222,10 +239,16 @@
         function accelerate(n) {
             gamePiece.gravity = n;
         }
-    
-
+      function restart(){
+        location.reload();
+        }
+        
       </script>
 
+      
+
+
+      
      
        
      

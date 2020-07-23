@@ -45,3 +45,8 @@ body{
 .container-fluid, .navbar-brand, .nav {
     background-color: rgb(103, 203, 243);
 }
+
+.page-footer{
+    color:white;
+    background-color:#2F2F2F;
+}

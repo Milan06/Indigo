@@ -6,36 +6,25 @@
     float: right;
     background-color: white;
 } 
-.top7 {
-   margin-top:7px; 
-}
-
+.top7 
+{ margin-top:7px; }
 footer {
     background-color: grey;
     color: white;
     padding: 10px;
     font-size: larger;
   }
-  
   body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
     color: black;
   }
-
-  p {
-    font-size: 16px;
-  }
-
-  .margin {
-    margin-bottom: 45px;
-  }
-
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
   .bg-1 { 
     background-color: #1abc9c; /* Green */
     color: #ffffff;
   }
-
   .bg-2 { 
     background-color: #474e5d; /* Dark Blue */
     color: #ffffff;

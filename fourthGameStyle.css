@@ -1,6 +1,6 @@
 
 .card-body {
-    background-color:white;
+    background-color:;
     border-radius: 25px; 
 }
 
@@ -14,7 +14,11 @@
     border-radius: 25px;   
 }
 .card{
+<<<<<<< HEAD
     background-color:
+=======
+    background-color: ;
+>>>>>>> fb53403782fc133df976c25d253812ac6bf76ef7
 }
 
 .container-fluid{

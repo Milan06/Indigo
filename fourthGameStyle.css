@@ -13,9 +13,9 @@
 .col {
     border-radius: 25px;   
 }
-.card{
-    background-color:;
-}
+body{
+    background-color: #2f2f2f;
+  }
 
 .container-fluid{
     background-color:rgb(103, 203, 243);
@@ -23,4 +23,7 @@
 
 .nav{
     background-color:rgb(103, 203, 243);
+}
+.instructions{
+    padding: 10px
 }

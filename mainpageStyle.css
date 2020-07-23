@@ -39,3 +39,6 @@ body{
     line-height: 1.8;
     color: black;
 }
+.container-fluid, .navbar-brand, .nav {
+    background-color: rgb(103, 203, 243);
+}

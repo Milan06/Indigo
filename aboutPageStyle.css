@@ -12,10 +12,15 @@ footer {
     background-color: grey;
     color: white;
     padding: 10px;
-    font-size: larger;
   }
-  body {
+<<<<<<< HEAD
+  .body {
     font: 20px Montserrat, sans-serif;
+=======
+  body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+>>>>>>> fc5fe202dacb6fe1a83de64336f92215e7f1d746
     line-height: 1.8;
     color: black;
   }

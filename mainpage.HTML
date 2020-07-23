@@ -9,31 +9,31 @@
     <link rel="stylesheet" href="mainpageStyle.css">
 
     <title>HackIt Gaming</title>
-   <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">HackIt Gaming</a>
-          </div>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#"><a href="mainpage.HTML">Home</a></a></li>
-            <li class="active"><a href="#"><a href="aboutPage.HTML">About Page</a></a></li>
-          </ul>
-        </div>
-      </nav>
-
-    <div class="jumbotron text-center">
-        <h1>HackIt Coding</h1>
-        <p>Enjoy the interactive games we have here!</p>
-      </div>
+  
 </head>     
 <body>
-   
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">HackIt Gaming</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#"><a href="mainpage.HTML">Home</a></a></li>
+        <li class="active"><a href="#"><a href="aboutPage.HTML">About Page</a></a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="jumbotron text-center">
+    <p id="head-tag">HackIt Coding</p>
+    <p>Enjoy the interactive games we have here!</p>
+  </div>
 <div class="container">
     <div class = "col-1">
     <div class="row">
     <div class="col-sm-6 col-md-6 col-lg-4">
   <!--Here-->
-      <img class="active" src="https://media.giphy.com/media/UVXp8PirOPmySJpays/giphy.gif"> 
+      <img class="active" id="preview-game-1" src="https://media.giphy.com/media/UVXp8PirOPmySJpays/giphy.gif"> 
     </div>
     <div class="col-sm-6 col-md-6 col-lg-8">
      <a href="firstGame.HTML"> <h1>Pong</h1></a>
@@ -59,7 +59,7 @@
     <div class="row">
         <div class="col-sm-6 col-md-6 col-lg-4">
   <!--Here-->
-          <img class="active" id="preview-game-2" src="https://media.giphy.com/media/fxIDmlaxMDgv7lDj82/giphy.gif"> 
+          <img class="active" id="preview-game-2" src="https://media.giphy.com/media/fxIDmlaxMDgv7lDj82/giphy.gif" height="100px"> 
         </div>
         <div class="col-sm-6 col-md-6 col-lg-8">
           <a href="thirdGame.HTML"> <h1>Breakout</h1></a>
@@ -70,10 +70,10 @@
     <div class = "col-4">
         <div class="row">
             <div class="col-sm-6 col-md-6 col-lg-4">
-              <img class="active" id="preview" src="https://media.giphy.com/media/WsQmm5FHP9tL8kv90R/giphy.gif"> 
+              <img class="active" id="preview-game-3" src="https://media.giphy.com/media/WsQmm5FHP9tL8kv90R/giphy.gif"> 
             </div>
             <div class="col-sm-6 col-md-6 col-lg-8">
-                <a href="fourthGame.HTML" id="preview-game-3"> <h1>Hangman</h1></a>
+                <a href="fourthGame.HTML"> <h1>Hangman</h1></a>
               <p>The objective of Hangman is for the player of the game to guess the name of different coding languages. The player will get 9 guesses each round to correctly guess the language. Have fun guessing!</p>
             </div>
             </div>
@@ -85,8 +85,8 @@
                   <img class="active" id="preview-game-4" src="https://media.giphy.com/media/cOoYDATiIyZNZD1BN6/giphy.gif"> 
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-8">
-                    <a href="fifthGame.HTML"> <h1>Rock Paper Scissor</h1></a>
-                  <p>Although this game is much simpler than the other games on this site, it is a lot of fun! The player gets to choose rock, paper, or scissors and then will go against the random generator in the computer to see who comes out on top. Ready for "Rock, Paper, Scissor says Shoot?"</p>
+                    <a href="fifthGame.HTML"> <h1>Rock Paper Scissors</h1></a>
+                  <p>Although this game is much simpler than the other games on this site, it is a lot of fun! The player gets to choose rock, paper, or scissors and then will go against the random generator in the computer to see who comes out on top. Ready for "Rock, Paper, Scissor says shoot?"</p>
                 </div>
                 </div>
             </div>
@@ -101,9 +101,11 @@
 
 
 
-<footer class="container-fluid text-center">
-    <p>HackIt Gaming</p>
-  </footer>
+  <!-- Footer -->
+<footer class="page-footer">
+  <div class="footer-copyright text-center py-3">HackIt Gaming</div>
+</footer>
+<!-- Footer -->
 
      
 </body>

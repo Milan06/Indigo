@@ -9,47 +9,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="thirdGameStyle.css">
 
-    <title>Game #3</title>
+    <title>FLOAT</title>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">WebSiteName</a>
+               
+                <a class="navbar-brand" href="#">HackIt Gaming</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="#"><a href="mainpage.HTML">Home</a></a></li>
-                <li><a href="#">List of Games</a></li>
                 <li class="active"><a href="#"><a href="aboutPage.HTML">About Page</a></a></li>
             </ul>
         </div>
     </nav>
 
     <div class="jumbotron text-center">
-        <h1>Flappy Bird</h1>
+        <h1>FLOAT</h1>
+
+   
     </div>
 
 </head>
 
-<body onload="startGame()">
+<body>
 
 
     <div class="container-fluid">
         <div class="row" >
             <div class="card text-center">
+<button type="button" class="btn btn-primary" onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.07)">FLOAT</button>
+<button type="button" class="btn btn-success" onclick="startGame()">PLAY</button>
+<button type="button" class="btn btn-danger"onmouseup="restart()">RESTART</button>
                 <div class="card-body game-div">
 
-              
-  
-             
-                
-        
-                    
-            
-
-                    
-
-
                 </div>
-
            
         </div>
         <div class="row top7"></div>
@@ -57,10 +50,14 @@
             <div class="card text-center">
                 <div class="card-body">
                  <div class="instructions">
-                 <p><strong>Instructions:</strong><br><br> </p>
-                 <p>Use the "FLY" button to float up and let go to drop</p>
+                 <p><strong>HOW TO PLAY:</strong><br><br> </p>
+                 <P>Press "PLAY"</P>
+                 <p>Use the "FLOAT" button to float up and let go to drop</p>
                  <p>Try not to hit the purple poles</p>
                  <p>GOOD LUCK!</p>
+                 <br>
+                 <p><strong>NOTE:</strong></p>
+                 <p>After pressing "RESTART" click "PLAY" to try again</p>
    
                  </div>
                 </div>
@@ -76,7 +73,10 @@
             background-image:url('https://cdn.lowgif.com/full/817c1ad017817a59-indiegamerrid-u-indiegamerrid-reddit.gif');
         }
         div{
-            background-color: rgb(250, 208, 215)
+            background-color: white;
+        }
+        h1{
+            font-family: 'Lucida Sans';
         }
         </style>
         
@@ -237,11 +237,7 @@
       </script>
 
       
-<button onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.07)"
->FLY</button>
 
-<button onmouseup="restart()"
->Restart</button>
 
       
      

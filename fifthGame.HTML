@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="mainpageStyle.css">
 
-    <title>Game #5</title>
+    <title>Rock Paper Scissors</title>
    <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -25,19 +25,31 @@
         <h1>Rock Paper Scissors
         </h1>
       </div>
-</head>   
+ <div class= "text-center">
+  <h2>Choose r for rock, p for paper, or s for scissors to start playing</h1>
+ </div>
 
     
   <style>
     body{
-      background-color: gray;
+      background-color: #2f2f2f;
     }
+    .navbar {
+      background-color: rgb(103, 203, 243);
+  }
+  h2{
+    color: white
+  }
+
+  
    </style>
      </head>
-   
+     
+     
      <body>
-       <h1>Choose r for rock, p for paper, or s for scissors to start playing</h1>
-   ​
+       
+     
+   
        <script type="text/javascript">
    
                var wins = 0;
@@ -45,7 +57,7 @@
                var losses = 0; 
                var rounds = 0;
    
-        if (rounds == 3) {
+        if (rounds === 3) {
           if (wins > losses) {
             alert("you win")
           }

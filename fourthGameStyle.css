@@ -1,28 +1,26 @@
 
-.instrutions {
-    background-color: white;
-
+.card-body {
+    background-color:;
+    border-radius: 25px; 
 }
+
 .card {
-    background-color: white; 
     border-color: black;
     border-radius: 25px; 
     padding: 3px;
- 
-}
-.card-body {
-    background-color:#474e5d;
-    border-radius: 25px; 
-}
-#card1 {
-    background-color: white;
-    border-radius: 25px; 
 }
 
-.row1 {
-    border-color: white;
-    border-radius: 25px; 
-}
 .col {
     border-radius: 25px;   
+}
+.card{
+    background-color: ;
+}
+
+.container-fluid{
+    background-color:rgb(103, 203, 243);
+}
+
+.nav{
+    background-color:rgb(103, 203, 243);
 }

@@ -7,9 +7,9 @@ html, body {
 
 .card {
     border: 4px solid black;
-    border-radius: 5px;
-    padding: 20px;
-    margin: auto;
+    border-radius: 2px;
+    padding: 10px;
+    margin: 5px;
 }
 .top7 
 { margin-top:7px; }

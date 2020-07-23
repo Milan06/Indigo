@@ -130,10 +130,10 @@ function drawGame() {
         dy = -dy;
     }
     if(paddleYO > canvas.height - 75) {
-        wPressed = false
+        sPressed = false
     }
     else if(paddleYO < 0) {
-        sPressed = false
+        wPressed = false
     }
     if(paddleYT > canvas.height - 75) {
         downPressed = false

@@ -27,3 +27,15 @@ body{
 .instructions{
     padding: 10px
 }
+<<<<<<< HEAD
+=======
+.footer {
+    background-color: black;
+}
+
+.page-footer{
+    color:white;
+    background-color:#2F2F2F;
+};
+}
+>>>>>>> fc5fe202dacb6fe1a83de64336f92215e7f1d746

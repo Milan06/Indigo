@@ -37,16 +37,23 @@ bottom: 11px;
     margin-top:7px;
     }
 
-body{ 
-    font: 20px "Montserrat", sans-serif;
-    line-height: 1.8;
-    color: black;
-}
+    body {
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        line-height: 1.8;
+        color: black;
+        font-weight: 500;
+      }
+
 .container-fluid, .navbar-brand, .nav {
     background-color: rgb(103, 203, 243);
+}
+#head-tag{
+    font-size: 65px;
 }
 
 .page-footer{
     color:white;
     background-color:#2F2F2F;
 }
+

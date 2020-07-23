@@ -30,3 +30,9 @@ body{
 .footer {
     background-color: black;
 }
+
+.page-footer{
+    color:white;
+    background-color:#2F2F2F;
+};
+}

@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="thirdGameStyle.css">
+    <link rel="stylesheet" href="breakout.css">
 
     <title>Game #3</title>
     <nav class="navbar navbar-default">
@@ -35,8 +36,8 @@
     <div class="container">
         <div class="row">
             <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title">This is where the game will go</h5>
+                <div class="card-body" onload="drawStart();">
+                    <canvas id="breakout" width="1100" height="575"></canvas>
                 </div>
 
             </div>
@@ -46,7 +47,7 @@
             <div class="card text-center">
                 <div class="card-body">
                  <div class="instructions">
-                 <p><strong>Instructions:</strong><br><br>The Instructions for the website go here</p>   
+                 <p><strong>Instructions:</strong><br><br>Use the left and right arrow keys to move the paddle and send the ball to as many bricks as you can, without letting the ball hit the ground.</p>   
    
                  </div>
                 </div>
@@ -58,6 +59,7 @@
 
 
 
+    <script src="breakout.js"></script>
 
 </body>
 

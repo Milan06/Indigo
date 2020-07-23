@@ -1,1 +1,7 @@
 canvas { border: 1px solid black; background-color: black;}
+.card-body {
+    background-color: #2F2F2F;
+}
+.container-fluid, .navbar-brand, .nav {
+    background-color: rgb(103, 203, 243);
+}

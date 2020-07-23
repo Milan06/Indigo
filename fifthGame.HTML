@@ -79,14 +79,17 @@
                else{
                  if(userInput == "r"&& computerguess == "s" ) {
                      wins++;
+                     losses--;
                  }if(userInput == "p"&& computerguess =="r"){
                      wins++;
+                     losses--;
                  }if(userInput == "s"&& computerguess =="p"){
                      wins++;
-               } else if (userInput == computerguess){
+                     losses--;
+                 } else if (userInput == computerguess){
                  ties++;
-               }
-               else{
+                 }
+                 else{
                  losses++;
                }
              }

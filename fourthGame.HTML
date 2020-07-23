@@ -8,6 +8,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="thirdGameStyle.css">
+    <link rel="stylesheet" href="fourthGameStyle.css">
+    <script type="text/javascript" ></script>
+
 
     <title>Hangman</title>
     <nav class="navbar navbar-default">
@@ -30,13 +33,26 @@
 
 <body>
 
-
     <div class="container">
         <div class="row">
             <div class="card text-center">
                 <div class="card-body">
+                    <div class="instructions">
+                        <h3>Instructions:</h3>
+                        <h4>Guess the coding language!!!</h4>
+                        <h5>Click any letter to begin...</h5>
+    
+                    </div>
+                </div>
+    
+            </div>
+        </div>   
+        <div class="row">
+            <div class="row1">
+            <div class="card text-center">
+                <div class="card-body">
 
-                  
+                
                     <div class="row">
                         <div class="col-lg-12">
                             ​
@@ -45,7 +61,7 @@
                                 <div class="card-header">
                                     <h3 class="card-title"><strong>Word to Guess</strong></h3>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body" id="card1">
                                     <!-- This h3 section called wordblanks is what we'll be replacing with letters as the user guesses.
                                           Pay particular attention to the id called ***wordblanks***. We'll be referencing this in the JavaScript. -->
                                     <h3 id="word-blanks">_ _ _ _ _ _ _ _ _ </h3>
@@ -54,7 +70,7 @@
                             ​
                             <!-- Second card: Holds the list of Wrong User Guesses. -->
                             <div class="card">
-                                <div class="card-body">
+                                <div class="card-body" id="card1">
                                     ​
                                     <!-- This span section called userGuesses is where we will be dumping the wrong guesses.
                                           Pay particular attention to the id called ****userGuesses***. We'll be referencing this in the JavaScript. -->
@@ -64,7 +80,7 @@
                             ​
                             <!-- Third card: Holds the Number of Wrong Guesses -->
                             <div class="card">
-                                <div class="card-body">
+                                <div class="card-body" id="card1">
                                     ​
                                     <!-- This span called guessesLeft is where we will be dumping the number of guesses left.
                                           Pay attention to the id called ****guessesLeft****. We'll be referencing this in the JavaScript. -->
@@ -74,7 +90,7 @@
                             ​
                             <!-- Fourth card: Holds the number of Wins. -->
                             <div class="card">
-                                <div class="card-body">
+                                <div class="card-body" id="card1">
                                     ​
                                     <!-- This span called winCounter is where we'll be dumping the number of wins.
                                           Pay attention to the id called ****winCounter***. We'll be referencing this in the JavaScript. -->
@@ -84,7 +100,7 @@
                             ​
                             <!-- Fifth card: Holds the number of Losses. -->
                             <div class="card">
-                                <div class="card-body">
+                                <div class="card-body" id="card1">
                                     ​
                                     <!-- This span called winCounter is where we'll be dumping the number of wins.
                                           Pay attention to the id called ****winCounter***. We'll be referencing this in the JavaScript. -->
@@ -98,21 +114,11 @@
                     </script>
 
                 </div>
-
+            </div>
             </div>
         </div>
         <div class="row top7"></div>
-        <div class="row">
-            <div class="card text-center">
-                <div class="card-body">
-                    <div class="instructions">
-                        <p><strong>Instructions:</strong><br><br>The Instructions for the website go here</p>
 
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </div>
 
 

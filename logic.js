@@ -2,8 +2,7 @@
 // ==================================================================================================
 
 // Array of Word Options (all lowercase)
-var wordsList = ["jerome", "neena", "darion", "lou", "greg", "jordan",
-  "jasmine", "stephen", "jacob", "adam", "rui", "luis"];
+  var wordsList = ["HTML", "html", "java", "javascript", "js", "python", "jquery", "bootstrap", "c", "css", "ruby"];
 // Solution will be held here.
 var chosenWord = "";
 // This will break the solution into individual letters to be stored in array.
@@ -162,3 +161,4 @@ document.onkeyup = function(event) {
     roundComplete();
   }
 };
+

@@ -15,9 +15,27 @@ footer {
 
   #preview-game{
       position: relative;
-      top: 17px;
+      top: 15px;
   }
-  
-.top7 
-{ margin-top:7px;}
 
+#preview-game-2{
+    position: relative;
+    top: 30px;
+}
+
+
+
+#preview-game-4{
+    position: relative;
+    top: 15px;
+}
+
+.top7 { 
+    margin-top:7px;
+    }
+
+body{ 
+    font: 20px "Montserrat", sans-serif;
+    line-height: 1.8;
+    color: black;
+}

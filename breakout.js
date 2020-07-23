@@ -99,7 +99,7 @@ function drawLives() {
 }
 function ballReset() {
     x = canvas.width/2;
-    y = canvas.height-30;
+    y = canvas.height/2;
 }
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -109,6 +109,7 @@ function draw() {
     drawScore();
     drawLives();
     collisionDetection();
+    drawWin();
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
     }
@@ -120,11 +121,11 @@ function draw() {
             dy = -dy;
         }
         else {
-            lives--;
-            if (!lives) {
+            if (lives <= 0) {
                 gameOver();
             }
             else {
+                lives--;
                 ballReset();
             }
         }
@@ -182,17 +183,19 @@ function collisionDetection() {
                     dy = -dy;
                     b.status = 0;
                     playerScore++;
-                    if(playerScore == brickRowCount*brickColumnCount) {
-                        ctx.fillText("YOU WIN, CONGRATULATIONS! Press space to play again.", );
-                        if (spacePressed) {
-                            document.location.reload();
-                            clearInterval(interval);
-                        }
-                        clearInterval(interval);
-                    }
                 }
             }
         }
+    }
+}
+function drawWin() {
+    if(playerScore >= brickRowCount*brickColumnCount) {
+        ctx.fillText("YOU WIN, CONGRATULATIONS! Press space to play again.", 235, 350);
+        if (spacePressed) {
+            document.location.reload();
+            clearInterval(interval);
+        }
+        clearInterval(interval);
     }
 }
 $("#breakout").on("click", function() {

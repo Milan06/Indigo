@@ -22,11 +22,75 @@
       </nav>
 
     <div class="jumbotron text-center">
-        <h1>Game #5</h1>
+        <h1>Rock Paper Scissors
+        </h1>
       </div>
 </head>   
-<body>
+
     
+  <style>
+    body{
+      background-color: gray;
+    }
+   </style>
+     </head>
+   
+     <body>
+       <h1>Choose r for rock, p for paper, or s for scissors to start playing</h1>
+   ​
+       <script type="text/javascript">
+   
+               var wins = 0;
+               var ties = 0;
+               var losses = 0; 
+               var rounds = 0;
+   
+        if (rounds == 3) {
+          if (wins > losses) {
+            alert("you win")
+          }
+          if ( losses > wins){
+          alert("you lose")
+        }
+        else{
+          alert("you tied!")
+        }
+        }else{
+             var array= ["r", "p", "s"];
+             document.onkeyup = function(event)  {
+             var userInput = event.key;
+                 var computerguess= array[Math.floor(Math.random() *3)];
+                 if (computerguess == userInput) {
+                 ties++;
+   
+               } 
+               else{
+                 if(userInput == "r"&& computerguess == "s" ) {
+                     wins++;
+                 }if(userInput == "p"&& computerguess =="r"){
+                     wins++;
+                 }if(userInput == "s"&& computerguess =="p"){
+                     wins++;
+               } else if (userInput == computerguess){
+                 ties++;
+               }
+               else{
+                 losses++;
+               }
+             }
+               alert("You choose: "+ userInput + "\ncomputer chooses: " + computerguess)
+               alert( "wins:" + wins + "\nlosses: " + losses + "\nties:"+ ties); rounds++;
+           }
+       }
+              
+           
+               
+             
+         
+           
+       </script>
+   
+   
 
 </body>
 </html>

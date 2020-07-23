@@ -55,5 +55,6 @@ footer {
   }
   .navbar {
       background-color: rgb(103, 203, 243);
+      height: 20px; 
   }
   

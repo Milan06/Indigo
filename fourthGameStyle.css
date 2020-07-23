@@ -13,6 +13,7 @@
 .col {
     border-radius: 25px;   
 }
+<<<<<<< HEAD
 .card{
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -24,6 +25,11 @@
     background-color:;
 >>>>>>> ffa75eb3dce06d6ec5cd13935a291810e4acd882
 }
+=======
+body{
+    background-color: #2f2f2f;
+  }
+>>>>>>> de813c57d10aaa6b21d82dbb537310ddc5ab9cab
 
 .container-fluid{
     background-color:rgb(103, 203, 243);
@@ -31,4 +37,7 @@
 
 .nav{
     background-color:rgb(103, 203, 243);
+}
+.instructions{
+    padding: 10px
 }

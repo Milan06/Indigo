@@ -94,11 +94,13 @@
         </style>
         
         <script>  
+        //variables
         var gamePiece;
         var obstacles = [];
         var myScore;
         var gameArea;
         
+        //the set up of the game at start
         function startGame() {
             console.log("were in the startgame function");
             obstacles = [];
@@ -112,6 +114,7 @@
             gameArea.start();
         }
         
+        //game area set up
         function createGameArea(){
           gameArea = {
             canvas : document.createElement("canvas"),
@@ -122,7 +125,7 @@
                 this.context = this.canvas.getContext("2d");
                 document.querySelector(".game-div").appendChild(this.canvas)
 
-
+        //updates game area and clears it every 20 milliseconds 
                 this.frameNo = 0;
                 this.interval = setInterval(updateGameArea, 20);
                 },
@@ -132,8 +135,7 @@
         }
         }
         
-        
-        
+            //components and setting varibles to zero
         function component(width, height, color, x, y, type) {
             this.type = type;
             if (type == "image") {
@@ -149,6 +151,7 @@
             this.y = y;
             this.gravity = 0;
             this.gravitySpeed = 0;
+            //animation section 
             this.update = function() {
                 ctx = gameArea.context;
                 if (this.type == "text") {
@@ -184,6 +187,7 @@
                     this.gravitySpeed = 0;
                 }
             }
+            //determines when player dies 
             this.crashWith = function(otherobj) {
                 var left = this.x;
                 var right = this.x + (this.width);
@@ -204,7 +208,7 @@
                
         }
             
-        
+        //updates game area
         function updateGameArea() {
             var x, height, gap, minHeight, maxHeight, minGap, maxGap;
             for (i = 0; i < obstacles.length; i += 1) {
@@ -212,6 +216,7 @@
                     return;
                 } 
             }
+            //clears game area
             gameArea.clear();
             gameArea.frameNo += 1;
             if (gameArea.frameNo == 1 || everyinterval(150)) {
@@ -221,6 +226,7 @@
                 height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
                 minGap = 50;
                 maxGap = 200;
+                //gap between obstacles is random 
                 gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
                 obstacles.push(new component(30, height,"purple", x, 0,));
                 obstacles.push(new component(30, x - height - gap, "purple", x, height + gap,));
@@ -229,6 +235,7 @@
                 obstacles[i].x += -1;
                 obstacles[i].update();
             }
+            //score
             myScore.text="SCORE: " + gameArea.frameNo;
             myScore.update();
             gamePiece.newPos();

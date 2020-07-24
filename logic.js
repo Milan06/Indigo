@@ -2,7 +2,7 @@
 // ==================================================================================================
 
 // Array of Word Options (all lowercase)
-  var wordsList = ["HTML", "html", "java", "javascript", "js", "python", "jquery", "bootstrap", "c", "css", "ruby"];
+  var wordsList = [ "html", "java", "javascript", "js", "python", "jquery", "bootstrap", "c", "css", "ruby"];
 // Solution will be held here.
 var chosenWord = "";
 // This will break the solution into individual letters to be stored in array.

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="thirdGameStyle.css">
+    
 
     <title>Float</title>
     <nav class="navbar navbar-default">
@@ -37,6 +37,7 @@
     <div class="container-fluid">
         <div class="row" >
             <div class="card text-center">
+
 <button type="button" class="btn btn-primary" onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.07)">FLOAT</button>
 <button type="button" class="btn btn-success" onclick="startGame()">PLAY</button>
 <button type="button" class="btn btn-danger"onmouseup="restart()">RESTART</button>
@@ -77,20 +78,19 @@
         }
         body {
       background-color: #2F2F2F;
-  }
-  .card-body {
+        }
+        .card-body {
       background-color: #2F2F2F;
-  }
-  .container-fluid, .navbar-brand, .nav {
+         }
+        .container-fluid, .navbar-brand, .nav {
       background-color: rgb(103, 203, 243);
-  }
-  .instructions{
+        }
+        .instructions{
       background-color: rgb(226, 226, 226)
-  }
-  p{
+        }
+        p{
       color: #2F2F2F;
-
-  }
+        }
         </style>
         
         <script>  
@@ -133,7 +133,7 @@
                 this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
             }
         }
-        }
+    }
         
             //components and setting varibles to zero
         function component(width, height, color, x, y, type) {
@@ -246,7 +246,7 @@
             if ((gameArea.frameNo / n) % 1 == 0) {return true;}
             return false;
         }
-        
+        //this function allows the peice to float using gravity
         function accelerate(n) {
             gamePiece.gravity = n;
         }
